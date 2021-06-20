@@ -1,0 +1,69 @@
+
+#sig-canvas {
+  background-color: white;
+  border: 2px dotted #CCCCCC;
+  border-radius: 15px;
+  cursor: crosshair;
+  }
+#sig-image {
+  background-color: white;
+  border: 1px solid #CCCCCC;
+}
+#sig-dataUrl {
+  display: none;
+}
+h1 {
+  color: #cc3366;
+  text-align: center;
+}
+
+h2 {
+  color: #3366cc;
+  text-align: center;
+}
+
+legend {
+  font-weight: bold;
+  color: #33cc66;
+}
+
+div {
+  margin: 5px;
+}
+
+label{
+  width: 100px;
+  display: inline-block;
+}
+
+table {
+  width: 100%;
+}
+
+button {
+  margin: 5px;
+}
+
+.btn-default {
+  background-color: #cc3366;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #33cc66;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.btn-update{
+  background-color: #3366cc;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.contract-Code {
+  display: none;
+}

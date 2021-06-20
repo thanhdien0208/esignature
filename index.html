@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chữ ký điện tử</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    	<!-- Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Chữ Ký Điện Tử</h1>
+				<fieldset>
+					<legend>Thông tin của bạn</legend>
+					<form action="#" method="GET">
+						<div class="contract-Code">
+							<label>Mã Hợp Đồng</label>
+							<input type="number" id="txtMaHopDong" name="txtMaHopDong" readonly />
+						</div>
+						<div>
+							<label>Tên của bạn</label>
+							<input type="text" id="txtTenCuaBan" name="txtTenCuaBan" />
+							<span id="errMessage"></span>
+						</div>
+						<div>
+							<label>Mail</label>
+							<input type="email" id="emailCuaBan" name="emailCuaBan" />
+							<span id="email"></span>
+						</div>
+						<div>
+							<label>Loại HĐ</label>
+							<select id="cmbLoaiHopDong" name="cmbLoaiHopDong">
+								<option>Hợp đồng điện tử</option>
+								<option>Khác</option>
+							</select>
+						</div>
+						<div>
+							<button class="btn btn-primary" type="button" onclick="LuuThongTin()">Lưu</button>
+							<button class="btn btn-update" type="button" onclick="LuuCapNhat()">Lưu Cập nhật</button>
+						</div>
+					</form>
+				</fieldset>
+				<p>Hãy ký tên bạn vào khung bên dưới và lưu chữ ký sau khi hoàn tất!</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+		 		<canvas id="sig-canvas" width="620" height="160">
+		 			Trình duyệt của bạn không hỗ trợ tính năng này!
+		 		</canvas>
+		 	</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<button class="btn btn-primary" id="sig-submitBtn">Lưu chữ ký</button>
+				<button class="btn btn-default" id="sig-clearBtn">Xoá chữ ký</button>
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-md-12">
+				<textarea id="sig-dataUrl" class="form-control" rows="5">URL dữ liệu cho chữ ký của bạn sẽ ở đây!</textarea>
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-md-12">
+		<h2>Thông tin chi tiết</h2>
+			<table border="1" cellspacing="0" cellpadding="5">
+				<thead>
+					<tr>
+						<th>Mã HĐ</th>
+						<th>Tên của bạn</th>
+						<th>Email</th>
+						<th>Loại HĐ</th>
+						<th>Hành động</th>
+					</tr>
+				</thead>
+				<tbody id="idDanhSachthongTin">
+				</tbody>
+			</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Hiển thị hình ảnh chữ ký của bạn:</h2>
+				<img id="sig-image" src="" alt="Hiển thị ảnh chữ ký tại đây"/>
+				<a id="link"></a>
+			</div>
+			<div>
+				<a id="download" download="sig-image.png"><button class="btn btn-default" type="button" onClick="download()">Tải chữ ký</button></a>
+			</div>
+			
+		</div>
+	</div>
+    <script src="./canvas.js"></script>
+	<script src="./script.js"></script>
+	<script>
+		function download(){
+        var download = document.getElementById("download");
+        var image = document.getElementById("sig-canvas").toDataURL("image/png")
+                    .replace("image/png", "image/octet-stream");
+        download.setAttribute("href", image);
+
+    }
+	</script>
+</body>
+</html>
